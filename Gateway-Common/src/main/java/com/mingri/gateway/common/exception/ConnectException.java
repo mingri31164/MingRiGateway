@@ -5,6 +5,7 @@ import lombok.Getter;
 
 import java.io.Serial;
 
+
 /**
  * 连接异常，连接某实例时发生异常
  */
