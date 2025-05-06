@@ -9,12 +9,11 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>Core</module>
-        <module>Bootstrap</module>
-        <module>Common</module>
-        <module>Config</module>
-        <module>Register</module>
-        <module>Dependencies</module>
+        <module>Gateway-Core</module>
+        <module>Gateway-Bootstrap</module>
+        <module>Gateway-Common</module>
+        <module>Gateway-Config</module>
+        <module>Gateway-Register</module>
     </modules>
 
     <properties>
@@ -25,29 +24,46 @@
         <maven.compiler.target>21</maven.compiler.target>
         <maven.compiler.source>21</maven.compiler.source>
         <lombok.version>1.18.30</lombok.version>
+        <netty.version>4.1.51.Final</netty.version>
+        <junit.version>4.12</junit.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <logback.version>1.1.7</logback.version>
     </properties>
 
     <dependencies>
+
+        <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
+
+        <!--junit-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--日志-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
     </dependencies>
-
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.mingri.gateway</groupId>
-                <artifactId>Dependencies</artifactId>
-                <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
 
     <build>
         <plugins>
